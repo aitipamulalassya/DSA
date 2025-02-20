@@ -6,25 +6,25 @@ class Solution {
 
        
         for(int i=0;i<n;i++){
-            int x=Integer.parseInt(nums[i], 2);
-            a[x]=1;
+            int decimal=Integer.parseInt(nums[i], 2);
+            a[decimal]=1;
         }
-        int d=0;
-        String t="";
+        int index=0;
+        String ans="";
         for(int i=0;i<m;i++){
             if(a[i]==0){
-           t=Integer.toBinaryString(i);
-            d=t.length();
+           ans=Integer.toBinaryString(i);
+            index=ans.length();
               break;  
             }
         }
-        int z=n-d;
+        int r=n-index;
         String str="";
-        while(z!=0){
+        while(r!=0){
             str+="0";
-            z--;
+            r--;
         }
-        str+=t;
+        str+=ans;
         return str;
     }
 }
