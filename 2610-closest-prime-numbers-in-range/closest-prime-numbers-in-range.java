@@ -1,17 +1,17 @@
 class Solution {
     boolean flag=true;
-   List<Integer> prime;
+ static  List<Integer> primelist=new ArrayList<>();
+  static{
+         seive(1000000); 
+
+         }
     public int[] closestPrimes(int left, int right) {
-        if(flag){
-         prime=seive(1000000); 
-        
-         flag=false;
-        }
+   
         int[] ans=new int[]{-1,-1};
-        List<Integer> li=new ArrayList<>();
-       for(int i=0;i<prime.size();i++){
-        if(prime.get(i)>=left&&prime.get(i)<=right){
-            li.add(prime.get(i));
+       List<Integer> li=new ArrayList<>(); 
+       for(int i=0;i<primelist.size();i++){
+        if(primelist.get(i)>=left&&primelist.get(i)<=right){
+            li.add(primelist.get(i));
           
         }
        }
@@ -27,8 +27,8 @@ class Solution {
        return ans;
 
     }
-    public List<Integer> seive(int n){
-        List<Integer> li=new ArrayList<>();
+    public static void seive(int n){
+      
         boolean[] isprime=new boolean[n+1];
         Arrays.fill(isprime,true);
         isprime[0]=false;isprime[1]=false;
@@ -43,8 +43,8 @@ class Solution {
         }
         for(int i=2;i<=n;i++){
     if(isprime[i])
-    li.add(i);
+    primelist.add(i);
   }
-        return li;
+        return;
     }
 }
