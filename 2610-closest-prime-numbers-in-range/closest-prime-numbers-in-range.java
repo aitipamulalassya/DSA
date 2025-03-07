@@ -12,7 +12,7 @@ class Solution {
        for(int i=0;i<prime.size();i++){
         if(prime.get(i)>=left&&prime.get(i)<=right){
             li.add(prime.get(i));
-            System.out.println(prime.get(i));
+          
         }
        }
 
