@@ -6,7 +6,7 @@ class Solution {
        for(int i=0;i<n;i++){
         int low=lowerbound(nums,i+1,n-1,lower-nums[i]);
         int high=upperbound(nums,i+1,n-1,upper-nums[i]);
-        if(low<=high)
+        
         cnt+=high-low+1;
        }
         return cnt;
